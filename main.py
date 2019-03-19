@@ -20,6 +20,17 @@ def new_password():
     password_list.append(website_entry)
     print(password_list)
 
+
+def find_password():
+    looked_for_website = input('What website is it for? ')
+    for entry in password_list:
+        if looked_for_website == entry['website']:        
+            print(entry['username'])
+            print(entry['password'])
+            break
+    print("Website doesn't exist")
+
+
 while True:
     print('''
     Welcome to the password manager ya dingus.
@@ -31,7 +42,7 @@ while True:
     if user_choice == 'new':
         new_password()
     elif user_choice == 'show':
-        pass
+        find_password()
     else:
         print("Hwat?? That didn't compute")    
 
